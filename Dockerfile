@@ -1,15 +1,15 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-slim
+# Stage 1: Build the JAR
+FROM maven:3.9.0-eclipse-temurin-17 AS builder
 
-# Set the working directory in the container
 WORKDIR /app
+COPY . .
+RUN ./mvnw clean package -DskipTests
 
-# Copy the JAR file into the container at /app
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
+# Stage 2: Run the app
+FROM eclipse-temurin:17-jdk
 
-# Expose the port your Spring Boot app will run on
+WORKDIR /app
+COPY --from=builder /app/target/tournex.jar tournex.jar
+
 EXPOSE 8080
-
-# Run the app
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "tournex.jar"]
