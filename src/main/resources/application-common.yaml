@@ -1,0 +1,23 @@
+database:
+  sql:
+    user:
+      select:
+        byMobileNumber: ""
+        byId: ""
+        all: "SELECT * FROM USERS"
+      insert:
+        newUser: "INSERT INTO USERS (FIRST_NAME, LAST_NAME, EMAIL, MOBILE_NUMBER, PASSWORD, TYPE) VALUES (:FIRST_NAME, :LAST_NAME, :EMAIL, :MOBILE_NUMBER, :PASSWORD, :TYPE)"
+      update:
+        userDetails: ""
+      delete:
+        byId: ""
+    tournament:
+      select:
+        byId: ""
+        all: ""
+      insert:
+        newTournament: ""
+      update:
+        tournamentDetails: ""
+      delete:
+        byId: ""
