@@ -1,0 +1,11 @@
+# PostgreSQL database configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://ep-summer-snowflake-a4n1651d-pooler.us-east-1.aws.neon.tech/tournex_dev
+    username: neondb_owner
+    password: npg_ezYh2cf5kKsg
+    driver-class-name:  org.postgresql.Driver
+  jpa:
+    hibernate: 
+      ddl-auto: update
+    show-sql: true

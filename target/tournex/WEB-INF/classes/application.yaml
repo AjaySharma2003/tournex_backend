@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active:
+      - common
+      - dev
+server:
+  port:
+    8082
