@@ -3,6 +3,11 @@ FROM maven:3.9.0-eclipse-temurin-17 AS builder
 
 WORKDIR /app
 COPY . .
+
+# ✅ Make mvnw executable
+RUN chmod +x mvnw
+
+# 🛠️ Build the project
 RUN ./mvnw clean package -DskipTests
 
 # Stage 2: Run the app
