@@ -27,7 +27,7 @@ public class UserController {
 		return userService.getAllUsers();
 	}
 	
-	@GetMapping
+	@PostMapping("/login")
 	public ArrayList<?> getUserById(@RequestBody Map<String, Object> request) {
 		return userService.getUserById(request);
 	}
