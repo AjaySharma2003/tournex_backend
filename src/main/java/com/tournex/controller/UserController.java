@@ -35,7 +35,10 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<?> addUser(@RequestBody Map<String, Object> request) {
 		int res = userService.addUser(request);
-		if (res == 0) {
+		if (res == 2) {
+			return ResponseEntity.status(400).body(Map.of("message", "User already exist"));
+		}
+		else if (res == 0) {
 			return ResponseEntity.status(400).body(Map.of("message", "Error Occured while adding user"));
 		} else {
 			return ResponseEntity.ok(Map.of("message", "User added successfully"));
