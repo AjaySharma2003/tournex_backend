@@ -2,9 +2,9 @@ database:
   sql:
     user:
       select:
-        byMobileNumber: "SELECT * FROM USERS WHERE MOBILE_NUMBER = :MOBILE_NUMBER"
+        byMobileNumber: ""
         byId: "SELECT * FROM USERS WHERE EMAIL = :EMAIL AND PASSWORD = :PASSWORD"
-        all: "SELECT * FROM USERS"
+        all: ""
       insert:
         newUser: "INSERT INTO USERS (NAME, EMAIL, PASSWORD, TYPE) VALUES (NAME, :EMAIL, :PASSWORD, :TYPE)"
       update:
