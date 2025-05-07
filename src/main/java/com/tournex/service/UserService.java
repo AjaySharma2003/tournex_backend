@@ -27,7 +27,7 @@ public class UserService {
 	}
 
 	public int addUser(Map<String, Object> request) {
-		ArrayList<?> result = repository.select(sqlQueries.getUser().getSelect().getByMobileNumber(), request);
+		ArrayList<?> result = repository.select(sqlQueries.getUser().getSelect().getByEmail(), request);
 		if(result.size() > 0) {
 			return 2;
 		}

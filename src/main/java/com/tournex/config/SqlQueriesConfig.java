@@ -21,7 +21,7 @@ public class SqlQueriesConfig {
 
         @Data
         public static class Select {
-            private String byMobileNumber;
+            private String byEmail;
             private String byId;
             private String all;
         }

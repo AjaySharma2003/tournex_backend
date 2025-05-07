@@ -2,11 +2,11 @@ database:
   sql:
     user:
       select:
-        byMobileNumber: ""
-        byId: "SELECT * FROM USERS WHERE EMAIL = :EMAIL AND PASSWORD = :PASSWORD"
+        byEmail: "SELECT * FROM USERS WHERE EMAIL = :EMAIL AND TYPE = :TYPE"
+        byId: "SELECT * FROM USERS WHERE EMAIL = :EMAIL AND PASSWORD = :PASSWORD AND TYPE = :TYPE"
         all: ""
       insert:
-        newUser: "INSERT INTO USERS (NAME, EMAIL, PASSWORD, TYPE) VALUES (NAME, :EMAIL, :PASSWORD, :TYPE)"
+        newUser: "INSERT INTO USERS (NAME, EMAIL, PASSWORD, TYPE) VALUES (:NAME, :EMAIL, :PASSWORD, :TYPE)"
       update:
         userDetails: ""
       delete:
